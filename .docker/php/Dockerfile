@@ -1,4 +1,4 @@
-FROM php:8.1-fpm-alpine
+FROM php:8.1-apache
 
 COPY . /app
 EXPOSE 80
@@ -17,17 +17,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
       postgresql-client \
       libzip-dev \
       unzip \
-    && rm -rf /var/lib/apt/lists/* \
-    && docker-php-ext-configure pdo_pgsql --with-pdo-pgsql=/usr/include/postgresql/ --with-pgsql=/usr/bin/pg_config \
-    && docker-php-ext-install \
-        intl \
-        pdo_pgsql \
-        pdo_mysql \
-        pdo_sqlite \
-        pcntl \
-        mcrypt \
-        zip \
-        opcache
+    && rm -rf /var/lib/apt/lists/*
+
+RUN docker-php-ext-install pdo pdo_pgsql \
+        && docker-php-ext-install \
+            intl \
+            mbstring \
+            pdo_pgsql \
+            pdo_mysql \
+            pcntl \
+            zip \
+            opcache
 
 # If you need redis, uncomment the following lines.
 #RUN pecl install -o -f redis && \
