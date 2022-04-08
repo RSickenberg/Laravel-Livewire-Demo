@@ -1,0 +1,27 @@
+{
+    "name": "romainsickenberg/laravel-livewire-demo",
+    "description": "A demo project made for Antistatique.",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sickenberg Romain",
+            "email": "r.sickenberg@gmail.com"
+        }
+    ],
+    "require": {},
+    "config": {
+        "platform": {
+            "php": ">=8.1.0"
+        },
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "optimize-autoloader": true
+}
