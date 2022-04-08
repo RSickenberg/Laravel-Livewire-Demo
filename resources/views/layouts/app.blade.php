@@ -8,6 +8,7 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,800,900&amp;display=swap">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
         <!-- Styles -->
@@ -34,7 +35,7 @@
             @endif
 
             <!-- Page Content -->
-            <main>
+            <main class="container m-auto mt-5">
                 {{ $slot }}
             </main>
         </div>
