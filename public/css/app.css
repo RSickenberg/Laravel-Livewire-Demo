@@ -13408,6 +13408,9 @@ body[dir="rtl"] .checkbox:checked,
 .artboard.phone {
   width: 320px;
 }
+.btn-block {
+  width: 100%;
+}
 .alert-info {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--in) / var(--tw-bg-opacity));

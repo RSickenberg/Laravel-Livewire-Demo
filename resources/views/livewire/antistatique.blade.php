@@ -6,7 +6,7 @@
         </div>
     </div>
     <div class="mt-10">
-        <div class="card bg-base-100 w-60 shadow-2xl inner-shadow m-auto">
+        <div class="card bg-base-100 w-60 max-w-[65em] shadow-2xl inner-shadow m-auto">
             <div class="card-body">
                 <div class="flex gap-6">
                     <div>
@@ -19,7 +19,11 @@
                     </div>
                 </div>
                 <div class="card-actions justify-end">
-                    <button wire:click="showLove" class="btn btn-block btn-accent mt-5">Ajouter de l'amour</button>
+                    @if(!$shouldReturnToZero)
+                        <button wire:click="showLove" class="btn btn-block btn-accent mt-5">Ajouter de l'amour</button>
+                    @else
+                        <button wire:click="removeLove" class="btn btn-block btn-accent mt-5">Retirer de l'amour</button>
+                    @endif
                 </div>
             </div>
         </div>
