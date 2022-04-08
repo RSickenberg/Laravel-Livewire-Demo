@@ -1,0 +1,42 @@
+version: "3.9"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: .docker/php/Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - ./app
+    networks:
+      - livewire
+    depends_on:
+      - db
+      # - redis
+    environment:
+      DB_HOST: db
+      DB_DATABASE: livewire
+      DB_USERNAME: livewire
+      DB_PASSWORD: livewire
+  db:
+    image: postgres:14-alpine
+    restart: always
+    networks:
+      - livewire
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=livewire
+      - POSTGRES_PASSWORD=livewire
+      - POSTGRES_DB=livewire
+  #  redis:
+  #    image: redis:alpine
+  #    ports:
+  #      - "6382:6379"
+volumes:
+  pgdata:
+
+networks:
+  livewire:
