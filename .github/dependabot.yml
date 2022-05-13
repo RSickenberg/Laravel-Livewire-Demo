@@ -1,0 +1,22 @@
+version: 2
+updates:
+  - package-ecosystem: composer
+    directory: "/"
+    versioning-strategy: increase-if-necessary
+    allow:
+      - dependency-type: all
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 20
+    reviewers:
+      - "RSickenberg"
+  - package-ecosystem: npm
+    directory: "/"
+    versioning-strategy: increase-if-necessary
+    allow:
+      - dependency-type: all
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 20
+    reviewers:
+      - "RSickenberg"
